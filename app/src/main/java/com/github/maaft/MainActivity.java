@@ -1,5 +1,7 @@
 package com.github.maaft;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity
     EditText editInterval;
     Button btnSave;
     SharedPreferences prefs;
+    PendingIntent service;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,16 @@ public class MainActivity extends AppCompatActivity
                 editor.putLong("update_interval", update_interval);
                 editor.apply();
 
+                /*AlarmManager m = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+                Intent i = new Intent(getApplicationContext(), MyAlarmReceiver.class);
+
+                if (service == null)
+                {
+                    service = PendingIntent.getService(getApplicationContext(), 0, i, PendingIntent.FLAG_CANCEL_CURRENT);
+                }
+
+                m.setRepeating(AlarmManager.RTC, System.currentTimeMillis(),update_interval*1000,service);
+*/
                 Context context = getApplicationContext();
                 AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
                 RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.c10_widget);

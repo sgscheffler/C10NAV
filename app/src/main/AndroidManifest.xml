@@ -11,15 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service
+        <!--service
             android:name=".C10NAVService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" /-->
 
         <receiver android:name=".C10Widget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="myOnClickTag" />
             </intent-filter>
 
             <meta-data
