@@ -15,3 +15,11 @@ Donations accepted: 0x6a05b9112a090D7438F07ead52185CdBdE7D06ED
 6. Profit
 
 
+## Wishlist
+
+Sorted for priority
+
+- Automatic updates
+- 24h, 7d, 30d percentage changes
+- C20 and IHF support
+
