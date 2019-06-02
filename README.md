@@ -7,7 +7,7 @@ Please open a new issue or PM me directly on discord if something is missing or 
 Donations accepted: 0x6a05b9112a090D7438F07ead52185CdBdE7D06ED
 
 ## Instructions
-1. Install 
+1. Install [apk](app/build/outputs/apk/debug/c10-nav-ticker.apk)
 2. Enter amount of holdings and press save
 3. Add widget
 4. Touch widget to update values
