@@ -19,7 +19,8 @@
         <receiver android:name=".C10Widget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="myOnClickTag" />
+                <action android:name="WidgetClicked" />
+                <action android:name="JSONReady" />
             </intent-filter>
 
             <meta-data

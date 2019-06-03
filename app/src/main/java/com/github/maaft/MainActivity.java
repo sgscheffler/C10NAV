@@ -51,22 +51,9 @@ public class MainActivity extends AppCompatActivity
                 editor.putLong("update_interval", update_interval);
                 editor.apply();
 
-                /*AlarmManager m = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
-                Intent i = new Intent(getApplicationContext(), MyAlarmReceiver.class);
-
-                if (service == null)
-                {
-                    service = PendingIntent.getService(getApplicationContext(), 0, i, PendingIntent.FLAG_CANCEL_CURRENT);
-                }
-
-                m.setRepeating(AlarmManager.RTC, System.currentTimeMillis(),update_interval*1000,service);
-*/
-                Context context = getApplicationContext();
-                AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-                RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.c10_widget);
-                ComponentName thisWidget = new ComponentName(context, C10Widget.class);
-
-                new JSONTask(holdings, remoteViews, thisWidget, appWidgetManager).execute("https://api.invictuscapital.com/v2/funds/crypto10/nav");
+                new JSONTask(getApplicationContext(), C10Widget.ID_NAV).execute("https://api.invictuscapital.com/v2/funds/crypto10/nav");
+                new JSONTask(getApplicationContext(), C10Widget.ID_MOVEMENTS_24H).execute("https://api.invictuscapital.com/v2/funds/crypto10/movement?range=24h");
+                new JSONTask(getApplicationContext(), C10Widget.ID_MOVEMENTS_7D).execute("https://api.invictuscapital.com/v2/funds/crypto10/movement?range=7d");
 
             }
         });

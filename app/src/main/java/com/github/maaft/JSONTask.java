@@ -2,6 +2,8 @@ package com.github.maaft;
 
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -12,25 +14,21 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.ref.WeakReference;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.DecimalFormat;
 
 public class JSONTask extends AsyncTask<String, Void, JSONObject>
 {
-    private float holdings;
-    private RemoteViews views;
-    private ComponentName WidgetID;
-    private AppWidgetManager appWidgetManager;
+    private WeakReference<Context> context;
+    private String id;
+    public static final String JSONReady = "JSONReady";
 
-    private DecimalFormat df2 = new DecimalFormat("#.##");
-
-    public JSONTask(float holdings, RemoteViews views, ComponentName appWidgetID, AppWidgetManager appWidgetManager)
+    public JSONTask(Context context, String id)
     {
-        this.holdings = holdings;
-        this.views = views;
-        this.WidgetID = appWidgetID;
-        this.appWidgetManager = appWidgetManager;
+        this.context = new WeakReference<>(context);
+        this.id = id;
     }
 
     @Override
@@ -74,15 +72,10 @@ public class JSONTask extends AsyncTask<String, Void, JSONObject>
     @Override
     protected void onPostExecute(JSONObject response)
     {
-        try {
-            float nav = Float.parseFloat(response.getString("nav_per_token"));
-            views.setTextViewText(R.id.txtNAV, "$ " + df2.format(nav));
-            views.setTextViewText(R.id.txtholdings, "$ " + df2.format(nav * holdings));
-            appWidgetManager.updateAppWidget(WidgetID, views);
-
-
-        } catch (JSONException ex) {
-            Log.e("App", "couldn't get JSON data.", ex);
-        }
+        Intent intent = new Intent(context.get(), C10Widget.class);
+        intent.setAction(JSONReady);
+        intent.putExtra("json", response.toString());
+        intent.putExtra("id", id);
+        context.get().sendBroadcast(intent);
     }
 }
