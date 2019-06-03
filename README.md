@@ -1,6 +1,6 @@
 # C10NAV
 
-<img src="./screen.png" width="270" height="561">
+<img src="https://github.com/maaft/C10NAV/blob/master/screen.jpg" width="270" height="561">
 
 
 
