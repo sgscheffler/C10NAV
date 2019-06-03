@@ -1,5 +1,8 @@
 # C10NAV
 
+![Widget](screen.jpg)
+
+
 C10 Ticker widget for android. Automatic refresh is not working currently.
 
 Please open a new issue or PM me directly on discord if something is missing or if you find a bug.
