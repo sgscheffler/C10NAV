@@ -1,6 +1,7 @@
 # C10NAV
 
-![Widget](screen.jpg){:height="10%" width="10%"}
+<img src="./screen.png" width="270" height="561">
+
 
 
 C10 Ticker widget for android. Automatic refresh is not working currently.
