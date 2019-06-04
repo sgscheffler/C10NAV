@@ -1,5 +1,9 @@
 # C10NAV
 
+<img src="https://github.com/maaft/C10NAV/blob/master/screen.jpg" width="270" height="561">
+
+
+
 C10 Ticker widget for android. Automatic refresh is not working currently.
 
 Please open a new issue or PM me directly on discord if something is missing or if you find a bug.

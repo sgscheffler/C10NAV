@@ -49,4 +49,46 @@
         android:textColor="#FFC107"
         android:textSize="14sp" />
 
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="0dp"
+        android:background="#00BCD4"
+        android:text="24h:" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt1"
+        android:layout_marginTop="0dp"
+        android:background="#00BCD4"
+        android:text="7d:" />
+
+    <TextView
+        android:id="@+id/txt24h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtholdings"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/txt1"
+        android:background="#00BCD4"
+        android:text="2.5%"
+        android:textColor="#00FF00" />
+
+    <TextView
+        android:id="@+id/txt7d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt24h"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/txt2"
+        android:background="#00BCD4"
+        android:text="-12.5%"
+        android:textColor="#FF0000" />
+
 </RelativeLayout>
